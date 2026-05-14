@@ -1,0 +1,63 @@
+/* Base page theme */
+body { 
+    background-color: #f4f1ea; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+
+.navbar { background-color: #d8c3a5 !important; } 
+
+/* Footer area styling */
+footer { 
+    background-color: #d8c3a5; 
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+/* Contact Form Styling */
+.contact-container {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.btn-custom {
+    background-color: #8e7d66;
+    color: white;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #6d5f4d;
+    color: white;
+}
+
+/* Error Message Styling - دروس الأسبوع 4 و 11 */
+.error-text {
+    color: #b02a37;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none; /* مخفي حتى يحدث خطأ */
+}
+
+/* Success Message Box - تحسين رسالة السبميت */
+#successBox {
+    display: none;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Map Styling */
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 20px;
+    border: 3px solid #d8c3a5;
+}

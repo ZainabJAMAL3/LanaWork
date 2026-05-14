@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMINA CANDLES | Sign In</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/550da1d535.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .container-login {
+            max-width: 430px;
+            width: 100%;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        .container-login header {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #8e7d66;
+        }
+        .container-login input {
+            height: 50px;
+            width: 100%;
+            padding: 0 15px;
+            font-size: 17px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+        .container-login input:focus { border-color: #8e7d66; }
+        .container-login .button {
+            background: #8e7d66;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+        .container-login .button:hover { background: #6d5f4d; }
+        .signup { font-size: 15px; text-align: center; margin-top: 15px; }
+        .signup label, .signup a { color: #8e7d66; cursor: pointer; text-decoration: none; font-weight: bold; }
+        
+        #check { display: none; }
+        #check:checked ~ .registration { display: block; }
+        #check:checked ~ .login { display: none; }
+        .registration { display: none; }
+
+        .error-text {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none; 
+            text-align: left;
+        }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #d8c3a5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><strong>LUMINA CANDLES</strong></a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container d-flex justify-content-center">
+      <div class="container-login">
+        <input type="checkbox" id="check" />
+        
+        <div class="login form">
+          <header>Login</header>
+          <form id="userLoginForm" novalidate>
+            <input type="email" id="loginEmail" placeholder="example@gmail.com">
+            <div id="emailError" class="error-text">⚠️ Invalid format: Email must contain '@' and a domain.</div>
+            
+            <input type="password" id="loginPass" placeholder="Password">
+            <div id="passError" class="error-text">⚠️ Please enter your password.</div>
+            
+            <input type="submit" class="button" value="Login">
+          </form>
+          <div class="signup">
+            <span>Don't have an account? <label for="check">Signup</label></span>
+          </div>
+          <hr>
+          <div class="signup">
+            <span>Are you an Admin? <a href="adminLogIn.html">Dashboard Login</a></span>
+          </div>
+        </div>
+
+        <div class="registration form">
+          <header>Signup</header>
+          <form id="userSignupForm" novalidate>
+            <input type="text" id="regEmail" placeholder="Email Address">
+            <div id="regEmailError" class="error-text">⚠️ Valid email is required.</div>
+            
+            <input type="password" id="regPass" placeholder="Create a password">
+            <div id="regPassError" class="error-text">⚠️ Password is required.</div>
+            
+            <input type="password" id="regConfirm" placeholder="Confirm your password">
+            <div id="regConfirmError" class="error-text">⚠️ Passwords do not match.</div>
+            
+            <input type="submit" class="button" value="Signup">
+          </form>
+          <div class="signup">
+            <span>Already have an account? <label for="check">Login</label></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center py-3 fixed-bottom" style="background-color: #d8c3a5">
+      <div class="container">
+        <p class="mb-0">© 2026 LUMINA CANDLES | Group 6 Project</p>
+        <p class="mb-0"><small>Lana, Zainab, Eiman, Miad - IAU CCSIT</small></p>
+      </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. Login Logic ---
+            const loginForm = document.getElementById('userLoginForm');
+            if(loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Stop default form submission
+                    let isValid = true;
+                    
+                    const email = document.getElementById('loginEmail');
+                    const pass = document.getElementById('loginPass');
+                    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                    // Email Validation
+                    if (email && !emailReg.test(email.value)) {
+                        document.getElementById('emailError').style.display = 'block';
+                        isValid = false;
+                    } else { 
+                        if(document.getElementById('emailError')) document.getElementById('emailError').style.display = 'none'; 
+                    }
+
+                    // Password Validation
+                    if (pass && pass.value.trim() === "") {
+                        document.getElementById('passError').style.display = 'block';
+                        isValid = false;
+                    } else { 
+                        if(document.getElementById('passError')) document.getElementById('passError').style.display = 'none'; 
+                    }
+
+                    // Success: Alert user and open home page
+                    if (isValid) {
+                        alert("Welcome back to LUMINA CANDLES! ✨");
+                        window.location.href = "index.html"; 
+                    }
+                });
+            }
+
+            // --- 2. Signup Logic ---
+            const signupForm = document.getElementById('userSignupForm');
+            if(signupForm) {
+                signupForm.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    let isValid = true;
+                    
+                    const regEmail = document.getElementById('regEmail');
+                    const regPass = document.getElementById('regPass');
+                    const regConfirm = document.getElementById('regConfirm');
+
+                    // Email check
+                    if (regEmail && !regEmail.value.includes('@')) {
+                        document.getElementById('regEmailError').style.display = 'block';
+                        isValid = false;
+                    } else { 
+                        if(document.getElementById('regEmailError')) document.getElementById('regEmailError').style.display = 'none'; 
+                    }
+
+                    // Password check
+                    if (regPass && regPass.value.length < 6) {
+                        document.getElementById('regPassError').innerText = "⚠️ Password must be at least 6 characters.";
+                        document.getElementById('regPassError').style.display = 'block';
+                        isValid = false;
+                    } else { 
+                        if(document.getElementById('regPassError')) document.getElementById('regPassError').style.display = 'none'; 
+                    }
+
+                    // Confirmation check
+                    if (regConfirm && (regConfirm.value !== regPass.value || regConfirm.value === "")) {
+                        document.getElementById('regConfirmError').style.display = 'block';
+                        isValid = false;
+                    } else { 
+                        if(document.getElementById('regConfirmError')) document.getElementById('regConfirmError').style.display = 'none'; 
+                    }
+
+                    // Success: Alert user and open home page
+                    if (isValid) {
+                        alert("Account created successfully! Enjoy shopping at LUMINA CANDLES.");
+                        window.location.href = "index.html";
+                    }
+                });
+            }
+        });
+    </script>
+  </body>
+</html>

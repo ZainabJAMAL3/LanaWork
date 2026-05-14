@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUMINA CANDLES | Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/550da1d535.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" style="background-color: #d8c3a5">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><strong>LUMINA CANDLES</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="contactUs.html">Contact Us</a></li>
+          </ul>
+          
+          <ul class="navbar-nav d-flex flex-row me-3">
+            <li class="nav-item me-3">
+                <a class="nav-link" href="loginPage.html">
+                    <i class="fa-solid fa-user"></i> Login
+                </a>
+            </li>
+
+            <li class="nav-item me-3">
+                <a class="nav-link" href="cart.html">
+                    <i class="fas fa-shopping-cart"></i> 
+                    <span id="cartBadge" class="badge bg-danger">0</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="adminLogIn.html"><i class="fa-solid fa-user-shield"></i> Admin</a>
+            </li>
+          </ul>
+
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search for candles...">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center" id="productContainer">
+            <div class="col-12 text-center mb-5">
+                <h2 style="color: #8e7d66;">Our Scented Candles</h2>
+                <p>Experience the luxury of hand-poured, customized candles.</p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="p-3 product-card shadow-sm text-center">
+                    <img src="images/Lavender Dream.jpeg" class="img-fluid rounded mb-3" alt="Lavender Dream" style="max-height: 180px;">
+                    <h5>Lavender Dream</h5>
+                    <p class="text-muted small">Relaxing & Soothing</p>
+                    <h5 class="text-dark">45.00 SAR</h5>
+                    <button class="btn btn-custom btn-sm w-100 add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="p-3 product-card shadow-sm text-center">
+                    <img src="images/Vanilla Sky.jpeg" class="img-fluid rounded mb-3" alt="Vanilla Sky" style="max-height: 180px;">
+                    <h5>Vanilla Sky</h5>
+                    <p class="text-muted small">Sweet & Warm</p>
+                    <h5 class="text-dark">39.00 SAR</h5>
+                    <button class="btn btn-custom btn-sm w-100 add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="p-3 product-card shadow-sm text-center">
+                    <img src="images/Ocean Breeze.jpeg" class="img-fluid rounded mb-3" alt="Ocean Breeze" style="max-height: 180px;">
+                    <h5>Ocean Breeze</h5>
+                    <p class="text-muted small">Fresh & Energetic</p>
+                    <h5 class="text-dark">40.00 SAR</h5>
+                    <button class="btn btn-custom btn-sm w-100 add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="p-3 product-card shadow-sm text-center">
+                    <img src="images/Rose Garden.jpeg" class="img-fluid rounded mb-3" alt="Rose Garden" style="max-height: 180px;">
+                    <h5>Rose Garden</h5>
+                    <p class="text-muted small">Romantic Floral</p>
+                    <h5 class="text-dark">35.00 SAR</h5>
+                    <button class="btn btn-custom btn-sm w-100 add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="p-3 product-card shadow-sm text-center">
+                    <img src="images/Apple Cinnamon.jpeg" class="img-fluid rounded mb-3" alt="Apple Cinnamon" style="max-height: 180px;">
+                    <h5>Apple Cinnamon</h5>
+                    <p class="text-muted small">Warm Winter Vibe</p>
+                    <h5 class="text-dark">50.00 SAR</h5>
+                    <button class="btn btn-custom btn-sm w-100 add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3" style="background-color: #d8c3a5">
+      <div class="container">
+        <p class="mb-0">© 2026 LUMINA CANDLES | Group 6 Project</p>
+        <p class="mb-0"><small>Lana, Zainab, Eiman, Miad - IAU CCSIT</small></p>
+      </div>
+    </footer>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('productContainer');
+    const cartBadge = document.getElementById('cartBadge');
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let products = JSON.parse(localStorage.getItem('products')) || [];
+
+    function updateBadge() {
+        if (cartBadge) {
+            cartBadge.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+        }
+    }
+
+    updateBadge();
+
+    // 1. ADD TO CART LOGIC
+    document.addEventListener('click', function (e) {
+        // Check if the actual "Add to Cart" button was clicked
+        if (e.target.classList.contains('add-to-cart-btn')) {
+            e.stopPropagation(); // STOP the click from bubbling up to the card redirect
+
+            const button = e.target;
+            const card = button.closest('.product-card');
+            const name = card.querySelector('h5').innerText;
+            const price = card.querySelector('.text-dark').innerText;
+            const image = card.querySelector('img').src;
+
+            let existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateBadge();
+
+            // UI feedback
+            const originalText = button.innerText;
+            button.innerText = "Added! ✓";
+            button.classList.replace('btn-custom', 'btn-success');
+
+            setTimeout(() => {
+                button.innerText = originalText;
+                button.classList.replace('btn-success', 'btn-custom');
+            }, 1000);
+
+            return; // Exit so we don't trigger the redirect below
+        }
+
+        // 2. REDIRECT TO DETAILS LOGIC
+        // Only redirect if the user clicked the card (but NOT the button)
+        const card = e.target.closest('.product-card');
+        if (card) {
+            const product = {
+                name: card.querySelector('h5').innerText,
+                price: card.querySelector('.text-dark').innerText,
+                image: card.querySelector('img').src,
+                // Adding a default description in case it's not in the card
+                description: card.querySelector('.text-muted') ? card.querySelector('.text-muted').innerText : "Premium handcrafted candle."
+            };
+
+            localStorage.setItem("selectedProduct", JSON.stringify(product));
+            window.location.href = "productDetails.html";
+        }
+    });
+
+    // 3. RENDER DYNAMIC PRODUCTS (from Admin)
+    if (container && products.length > 0) {
+        let existingNames = Array.from(document.querySelectorAll('.product-card h5'))
+            .map(el => el.innerText);
+
+        products.forEach(product => {
+            if (existingNames.includes(product.name)) return;
+
+            const html = `
+            <div class="col-md-4 mb-4">
+                <div class="p-3 product-card shadow-sm text-center" style="cursor: pointer;">
+                    <img src="${product.image}" class="img-fluid rounded mb-3" style="max-height: 180px;">
+                    <h5>${product.name}</h5>
+                    <p class="text-muted small">${product.scent || 'Custom Candle'}</p>
+                    <h5 class="text-dark">${product.price} SAR</h5>
+                    <button class="btn btn-custom btn-sm w-100 add-to-cart-btn">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>`;
+            container.insertAdjacentHTML('beforeend', html);
+        });
+    }
+});
+</script>
+  </body>
+</html>
